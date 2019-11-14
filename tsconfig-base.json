@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "declarationMap": false,
+    "strict": true,
+    "lib": ["es2018", "esnext.asynciterable"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es2018"
+  },
+  "include": ["./**/*"],
+  "exclude": ["node_modules", "tests/**/*"]
+}
