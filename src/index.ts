@@ -104,7 +104,7 @@ export class GoogleSheetsAPI implements IGoogleSheetsAPI {
       if(parseInt(rowEnd) < row){
         rowEnd = `${row}`
       }
-      this.batch.range = `${sheetName}!${columnStart}${rowStart}:${columnEnd}:${rowEnd}`
+      this.batch.range = `${sheetName}!${columnStart}${rowStart}:${columnEnd}${rowEnd}`
       this.batch.data.push(contentToInsert)
     }
   }
