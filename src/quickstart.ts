@@ -49,7 +49,7 @@ export function getNewToken(oAuth2Client: any, callback: Function) {
       if (err) return console.error('Error while trying to retrieve access token', err)
       oAuth2Client.setCredentials(token)
       // Store the token to disk for later program executions
-      fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
+      fs.writeFile(join(__dirname, TOKEN_PATH), JSON.stringify(token), err => {
         if (err) return console.error(err)
         console.log('Token stored to', TOKEN_PATH)
       })
