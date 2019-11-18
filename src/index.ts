@@ -79,7 +79,7 @@ export class GoogleSheetsAPI implements IGoogleSheetsAPI {
       this.batch.range = `${sheet}!${columnString}${row}:${columnString}${row}`
       this.batch.data = [contentToInsert]
     } else {
-      const regex = /(.*)!(\w{1,})(\d{1,}):(\w{1,})(\d{1,})/
+      const regex = /(.*)!([a-zA-Z]{1,})(\d{1,}):([a-zA-Z]{1,})(\d{1,})/
       let [_, sheetName, columnStart, rowStart, columnEnd, rowEnd] = regex.exec(this.batch.range) || []
       if(sheetName !== sheet){
         throw new Error(`Can't update multiple sheets`)
