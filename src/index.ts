@@ -117,9 +117,11 @@ export class GoogleSheetsAPI implements IGoogleSheetsAPI {
       // How the input data should be interpreted.
       valueInputOption: 'USER_ENTERED',
       resource: {
-        range: this.batch.range,
-        values: [this.batch.data],
-        majorDimension: this.batch.majorDimension || 'ROWS'
+        data: {
+          range: this.batch.range,
+          values: this.batch.data.map((elem) => [elem]),
+          majorDimension: this.batch.majorDimension || 'ROWS'
+        }
       }
     }
     return new Promise((resolve, reject) => {
