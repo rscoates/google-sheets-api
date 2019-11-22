@@ -134,6 +134,7 @@ export class GoogleSheetsAPI implements IGoogleSheetsAPI {
         console.log(JSON.stringify(response, null, 2))
         this.batch.data = []
         this.batch.range = ''
+        this.batch.majorDimension = 'ROWS'
         return resolve(response)
       })
     })

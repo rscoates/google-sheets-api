@@ -5,5 +5,6 @@ declare module 'google-sheets' {
     addToCell(sheet: string, columnString: string, row: number, contentToInsert: string): Promise<any>
     addToBatch(sheet: string, columnString: string, row: number, contentToInsert: string): Promise<any>
     updateFromBatch(): Promise<void>
+    batch: any[]
   }
 }
